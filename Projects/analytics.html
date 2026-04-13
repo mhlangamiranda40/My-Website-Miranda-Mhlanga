@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Predictive Academic Analytics System</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div id="app">
+    <section>
+        <h1>Predictive Academic Analytics</h1>
+        <label>Enter Student Score (0 - 100):</label><br><br>
+        <input type="number" id="score" min="0" max="100"><br><br>
+        <button onclick="predictPerformance()">Predict Performance</button>
+        <h3 id="result"></h3>
+    </section>
+</div>
+<a href="../index.html" style="position: fixed; bottom: 30px; right: 30px; padding: 14px 22px; border-radius: 40px; background: linear-gradient(135deg, #E6E6FA, #D8BFD8); color: #4B0082; text-decoration: none; font-weight: 600; box-shadow: 0 6px 18px rgba(0,0,0,0.2); backdrop-filter: blur(10px); transition: 0.3s ease;" onclick="goBackToPortfolio(event)">Back to Portfolio</a>
+<script src="analytics.js"></script>
+<script>
+    function goBackToPortfolio(event){
+        event.preventDefault();
+        window.location.href = "../index.html#projects";
+    }
+</script>
+</body>
+</html>

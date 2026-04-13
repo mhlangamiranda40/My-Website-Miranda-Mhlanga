@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Advanced Academic Intelligence</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div id="app">
+    <section>
+        <h2>Student Dashboard</h2>
+        <button onclick="showViewStudents()">View Students</button>
+        <button onclick="showAddStudent()">Add Student</button>
+        <button onclick="resetDashboard()">Reset</button>
+        <br><br>
+        <div id="studentForm" style="display:none;">
+            <h3>Add / Edit Student</h3>
+            <label>Name:</label><br>
+            <input type="text" id="studentName" placeholder="Student Name"><br><br>
+            <label>Specialization:</label><br>
+            <select id="studentSpec">
+                <option value="">Select Specialization</option>
+                <option value="Software">Software Development</option>
+                <option value="Infrastructure">Infrastructure</option>
+            </select><br><br>
+            <label>Module 1 Score:</label><br>
+            <input type="text" id="module1"><br><br>
+            <label>Module 2 Score:</label><br>
+            <input type="text" id="module2"><br><br>
+            <label>Module 3 Score:</label><br>
+            <input type="text" id="module3"><br><br>
+            <label>Attendance %:</label><br>
+            <input type="text" id="attendance"><br><br>
+            <button onclick="addOrEditStudent()">Submit</button>
+        </div>
+        <div id="studentTable" style="display:none;">
+            <h3>All Students</h3>
+            <div style="overflow-x: auto;">
+                <table border="1" cellpadding="5" id="studentsList">
+                    <thead>
+                        <tr><th>Name</th><th>Specialization</th><th>Module 1</th><th>Module 2</th><th>Module 3</th><th>Attendance</th><th>Performance</th><th>Recommendation</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
+<a href="../index.html" style="position: fixed; bottom: 30px; right: 30px; padding: 14px 22px; border-radius: 40px; background: linear-gradient(135deg, #E6E6FA, #D8BFD8); color: #4B0082; text-decoration: none; font-weight: 600; box-shadow: 0 6px 18px rgba(0,0,0,0.2); backdrop-filter: blur(10px); transition: 0.3s ease;" onclick="goBackToPortfolio(event)">Back to Portfolio</a>
+<script src="academic_pro.js"></script>
+<script>
+    function goBackToPortfolio(event){
+        event.preventDefault();
+        window.location.href = "../index.html#projects";
+    }
+    // Load sample students on start
+    window.addEventListener('DOMContentLoaded', () => {
+        if(students.length === 0){
+            students.push({ name: "Alice Johnson", spec: "Software", modules: [85,78,92], attendance: 90 });
+            students.push({ name: "Bob Smith", spec: "Infrastructure", modules: [45,55,60], attendance: 65 });
+            renderTable();
+        }
+    });
+</script>
+</body>
+</html>

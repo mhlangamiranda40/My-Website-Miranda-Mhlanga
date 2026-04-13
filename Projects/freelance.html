@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Freelance Workflow Platform</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div id="freelanceApp">
+    <section class="projects-section">
+        <h2>Secure Freelance Workflow Platform</h2>
+        <input type="text" id="projectName" placeholder="Project Name">
+        <select id="status">
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select>
+        <button onclick="addContract()">Add Contract</button>
+        <h3>Contracts</h3>
+        <ul id="contractList"></ul>
+    </section>
+</div>
+<a href="../index.html" style="position: fixed; bottom: 30px; right: 30px; padding: 14px 22px; border-radius: 40px; background: linear-gradient(135deg, #E6E6FA, #D8BFD8); color: #4B0082; text-decoration: none; font-weight: 600; box-shadow: 0 6px 18px rgba(0,0,0,0.2); backdrop-filter: blur(10px); transition: 0.3s ease;" onclick="goBackToPortfolio(event)">Back to Portfolio</a>
+<script src="freelance.js"></script>
+<script>
+    function goBackToPortfolio(event){
+        event.preventDefault();
+        window.location.href = "../index.html#projects";
+    }
+</script>
+</body>
+</html>

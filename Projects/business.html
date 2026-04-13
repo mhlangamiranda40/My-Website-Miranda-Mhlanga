@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Business Intelligence</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <section>
+        <h2>Employee Performance Dashboard</h2>
+        <label>Employee Name:</label><br><br>
+        <input id="employee" placeholder="Enter employee name"><br><br>
+        <label>Revenue:</label><br><br>
+        <input id="revenue" placeholder="Numbers only"><br><br>
+        <label>Expenses:</label><br><br>
+        <input id="expenses" placeholder="Numbers only"><br><br>
+        <button onclick="addEmployee()">Add / Update Employee</button>
+        <button onclick="resetInputs()">Reset</button>
+        <h3>Employee Data</h3>
+        <div style="overflow-x: auto;">
+            <table id="employeeTable" border="1" style="width:80%; margin:auto; text-align:center;">
+                <thead><tr><th>Name</th><th>Revenue</th><th>Expenses</th><th>Profit</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <br>
+        <label>Select Chart Type:</label>
+        <select id="chartType">
+            <option value="bar">Bar</option>
+            <option value="pie">Pie</option>
+            <option value="line">Line</option>
+        </select>
+        <button onclick="generateChart()">Generate Chart</button>
+        <canvas id="chartCanvas" style="max-width:700px; margin:auto; display:block;"></canvas>
+        <br>
+        <button onclick="exportPDF()">Export PDF Report</button>
+        <h3 id="resultMsg"></h3>
+    </section>
+</div>
+<a href="../index.html" onclick="goBackToPortfolio(event)" style="position: fixed; bottom: 30px; right: 30px; padding: 14px 22px; border-radius: 40px; background: linear-gradient(135deg, #E6E6FA, #D8BFD8); color: #4B0082; text-decoration: none; font-weight: 600; box-shadow: 0 6px 18px rgba(0,0,0,0.2); backdrop-filter: blur(10px); transition: 0.3s ease;">Back to Portfolio</a>
+<script src="business.js"></script>
+<script>
+    function goBackToPortfolio(event){
+        event.preventDefault();
+        window.location.href = "../index.html#projects";
+    }
+</script>
+</body>
+</html>
